@@ -1,8 +1,15 @@
 //  --- Day 2: Dive! ---
 
+
 data class Command(val name: String, val value: Int)
+
 fun main() {
-    fun part1(input: List<Command>): Int {
+    val input = readInput("day02").map { val (name, value) = it.split(" ");Command(name,value.toInt())}
+    println(part1(input))
+    println(part2(input))
+}
+
+fun part1(input: List<Command>): Int {
         var depth = 0
         var horizontal = 0
         for (i in input){
@@ -13,9 +20,9 @@ fun main() {
             }
         }
         return depth*horizontal
-    }
+}
 
-    fun part2(input: List<Command>): Int {
+fun part2(input: List<Command>): Int {
         var depth = 0
         var horizontal = 0
         var aim = 0
@@ -30,9 +37,5 @@ fun main() {
             }
         }
         return depth*horizontal
-    }
 
-    val input = readInput("day02").map { val (name, value) = it.split(" ");Command(name,value.toInt())}
-    println(part1(input))
-    println(part2(input))
 }
