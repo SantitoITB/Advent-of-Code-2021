@@ -77,8 +77,6 @@ fun part2(randomOrder : List<Int>, boards : List<List<List<Int>>>): Int {
     return -1
 }
 
-fun stringToIntList(data: String): List<Int> = data.removeSurrounding("[","]").replace(" ","").split(",").map { it.toInt() }
-
 fun extractBoards(input: List<List<String>>): List<List<List<Int>>> {
     val boards = mutableListOf<List<String>>()
     var board = mutableListOf<String>()
